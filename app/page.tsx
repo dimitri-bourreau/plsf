@@ -1,9 +1,10 @@
 "use client";
 
 import { useDeferredValue, useEffect, useState } from "react";
-import { getVideoDataForWord } from "@/features/video/services/get-video-data-for-word";
+import { getVideoDataForWord } from "@/features/video/services/get-video-data-for-word.service";
 import { VideoData } from "@/features/video/types/video-data.type";
 import { useDebounce } from "@/hooks/use-debounce.hook";
+import { adapters } from "@/app-adapters/adapters.config";
 
 export default function Home() {
   const [inputQuery, setInputQuery] = useState("");
@@ -13,7 +14,10 @@ export default function Home() {
 
   const updateResults = async (inputQuery: string): Promise<void> => {
     if (!inputQuery) return void setResults([]);
-    const elixResults = await getVideoDataForWord(inputQuery);
+    const elixResults = await getVideoDataForWord(
+      adapters.videoData,
+      inputQuery,
+    );
     return void setResults(elixResults);
   };
 

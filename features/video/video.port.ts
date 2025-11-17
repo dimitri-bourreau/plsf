@@ -1,5 +1,5 @@
-import { VideoData } from "@/features/video/types/video-data.type";
+import { ElixResponse } from "@/features/video/types/elix-response.type";
 
 export interface VideoPort {
-  getVideosForWord(word: string): Promise<VideoData[]>;
+  getVideosForWord(word: string): Promise<ElixResponse>;
 }
