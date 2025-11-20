@@ -16,7 +16,7 @@ export const SearchResults = ({
   return (
     <Wrapper inputIsEmpty={inputIsEmpty} isPending={isPending}>
       {results.map((videoData) => (
-        <p key={`${videoData.id}-${videoData.word}`}>{videoData.word}</p>
+        <p key={JSON.stringify(videoData)}>{videoData.word}</p>
       ))}
     </Wrapper>
   );
