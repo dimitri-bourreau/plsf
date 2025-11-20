@@ -8,18 +8,24 @@ import { searchWord } from "@/actions/search-word.action";
 
 export default function Home() {
   const [videoData, setVideoData] = useState<VideoData[]>([]);
+  const [inputQuery, setInputQuery] = useState<string>("");
   const [isPending, startTransition] = useTransition();
 
   const handleSearch = async (word: string): Promise<void> => {
     startTransition(async () => {
       const searchResults = await searchWord(word);
       setVideoData(searchResults);
+      setInputQuery(word);
     });
   };
 
   return (
-    <section className="flex flex-col gap-4 items-center">
-      <SearchResults results={videoData} isPending={isPending} />
+    <section className="flex flex-col gap-4 items-center w-full">
+      <SearchResults
+        results={videoData}
+        isPending={isPending}
+        inputIsEmpty={inputQuery === ""}
+      />
       <WordInput searchForWord={handleSearch} />
     </section>
   );
