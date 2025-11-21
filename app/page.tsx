@@ -25,6 +25,7 @@ export default function Home() {
         results={videoData}
         isPending={isPending}
         inputIsEmpty={inputQuery === ""}
+        word={inputQuery}
       />
       <WordInput searchForWord={handleSearch} />
     </section>

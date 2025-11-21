@@ -14,7 +14,7 @@ export const ResultsContainer = ({
 }: ResultsContainerProps) => (
   <section
     className={clsx(
-      "p-1 w-full h-64 flex items-center justify-center bg-white/90 rounded transition-all",
+      "p-2 w-full h-64 flex flex-col gap-4 bg-white/40 rounded transition-all overflow-auto",
       {
         "animate-pulse": isPending,
       },
