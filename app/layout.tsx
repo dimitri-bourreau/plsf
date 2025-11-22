@@ -4,8 +4,8 @@ import { BackgroundLines } from "@/components/background-lines.component";
 import { ReactNode } from "react";
 
 export const metadata: Metadata = {
-  title: "PLSF",
-  description: "Partager des listes de signes de la LSF facilement",
+  title: "RELIX",
+  description: "Le Dico Elix, en plus rapide",
 };
 
 export default function RootLayout({
@@ -18,13 +18,10 @@ export default function RootLayout({
       <body className="font-verdana flex flex-col items-center justify-between min-h-screen p-10">
         <BackgroundLines />
         <div className="flex flex-col items-center justify-center gap-2 text-center">
-          <h1 className="text-7xl font-julius">PLSF</h1>
+          <h1 className="text-7xl font-julius">RELIX 🐇</h1>
           <h2 className="text-xl font-julius">
-            Partagez facilement des signes de la LSF
+            Le Dico Elix, en plus rapide... quand leurs vidéos fonctionnent 🤷
           </h2>
-          <h3 className="font-julius">
-            Cherchez des signes, faites une liste, partagez le lien
-          </h3>
         </div>
         {children}
       </body>
