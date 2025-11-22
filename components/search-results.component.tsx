@@ -36,7 +36,7 @@ export const SearchResults = ({
           return (
             <li
               key={`${JSON.stringify(videoData)}-${index}`}
-              className="flex flex-col gap-2 p-2  rounded relative"
+              className="flex flex-col gap-2 p-2 rounded relative"
             >
               <video
                 width="480"
@@ -45,7 +45,7 @@ export const SearchResults = ({
                 preload="auto"
                 poster={videoData.videoPosterUrl || undefined}
                 className="rounded"
-                autoPlay
+                autoPlay={index === 0}
               >
                 <source src={videoData.videoUrl} type="video/mp4" />
               </video>
