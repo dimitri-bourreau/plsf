@@ -28,34 +28,30 @@ export const SearchResults = ({
         🕵️‍♀️
       </h4>
 
-      <ul className="flex flex-col gap-4 w-full h-full">
+      <ul className="flex flex-col items-center gap-2 w-full h-full">
         {results.map((videoData, index) => {
           if (!videoData?.videoUrl) return undefined;
           return (
             <li
               key={`${JSON.stringify(videoData)}-${index}`}
-              className="flex gap-4"
+              className="flex flex-col gap-2 p-2  rounded relative"
             >
               <video
-                width="160"
-                height="120"
+                width="480"
+                height="360"
                 controls
                 preload="auto"
                 poster={videoData.videoPosterUrl || undefined}
+                className="rounded"
+                autoPlay
               >
                 <source src={videoData.videoUrl} type="video/mp4" />
               </video>
-              <div>
-                <button className="p-2 bg-[#36C5E0] cursor-pointer rounded text-white">
-                  Ajouter {videoData.word} à la liste
-                </button>
-              </div>
+              <p className="absolute left-4 top-4">{videoData.word}</p>
             </li>
           );
         })}
       </ul>
-
-      <div className="h-10 w-full">x</div>
     </ResultsContainer>
   );
 };

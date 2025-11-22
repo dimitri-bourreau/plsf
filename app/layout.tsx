@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className="font-verdana flex flex-col items-center justify-between min-h-screen p-10">
+      <body className="font-verdana flex flex-col gap-6 items-center justify-between h-screen p-10">
         <BackgroundLines />
         <div className="flex flex-col items-center justify-center gap-2 text-center">
           <h1 className="text-7xl font-julius">RELIX 🐇</h1>
