@@ -31,7 +31,7 @@ export const SearchResults = ({
         🕵️‍♀️
       </h4>
 
-      <ul className="flex flex-col md:flex-row items-center gap-2 h-full">
+      <ul className="flex flex-col md:flex-row md:flex-wrap md:justify-center items-center gap-2 h-full">
         {results.map((videoData, index) => {
           return (
             <li
