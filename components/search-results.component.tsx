@@ -29,14 +29,13 @@ export const SearchResults = ({
       </h4>
 
       <ul className="flex flex-col gap-4 w-full h-full">
-        {results.map((videoData, index) => (
-          <li
-            key={`${JSON.stringify(videoData)}-${index}`}
-            className="flex gap-4"
-          >
-            {!videoData.videoUrl || videoData.videoUrl === "" ? (
-              <div className="w-[160px] h-[120px] bg-black-500/40" />
-            ) : (
+        {results.map((videoData, index) => {
+          if (!videoData?.videoUrl) return undefined;
+          return (
+            <li
+              key={`${JSON.stringify(videoData)}-${index}`}
+              className="flex gap-4"
+            >
               <video
                 width="160"
                 height="120"
@@ -46,18 +45,17 @@ export const SearchResults = ({
               >
                 <source src={videoData.videoUrl} type="video/mp4" />
               </video>
-            )}
-            <div>
-              <p>Mot : {videoData.word}</p>
-              {videoData.source ? (
-                <Link href={videoData.source}>Source</Link>
-              ) : (
-                <p>Pas de source</p>
-              )}
-            </div>
-          </li>
-        ))}
+              <div>
+                <button className="p-2 bg-[#36C5E0] cursor-pointer rounded text-white">
+                  Ajouter {videoData.word} à la liste
+                </button>
+              </div>
+            </li>
+          );
+        })}
       </ul>
+
+      <div className="h-10 w-full">x</div>
     </ResultsContainer>
   );
 };
