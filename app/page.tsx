@@ -3,18 +3,18 @@
 import { WordInput } from "@/components/word-input.component";
 import { SearchResults } from "@/components/search-results.component";
 import { useState, useTransition } from "react";
-import { VideoData } from "@/features/video/types/video-data.type";
-import { searchWord } from "@/actions/search-word.action";
+import { Sign } from "@/features/video/types/sign.type";
+import { searchSign } from "@/actions/search-sign.action";
 
 export default function Home() {
-  const [videoData, setVideoData] = useState<VideoData[]>([]);
+  const [sign, setSign] = useState<Sign | undefined>(undefined);
   const [inputQuery, setInputQuery] = useState<string>("");
   const [isPending, startTransition] = useTransition();
 
   const handleSearch = async (word: string): Promise<void> => {
     startTransition(async () => {
-      const searchResults = await searchWord(word);
-      setVideoData(searchResults);
+      const signFromElix = await searchSign(word);
+      setSign(signFromElix);
       setInputQuery(word);
     });
   };
@@ -22,10 +22,9 @@ export default function Home() {
   return (
     <>
       <SearchResults
-        results={videoData}
+        sign={sign}
         isPending={isPending}
         inputIsEmpty={inputQuery === ""}
-        word={inputQuery}
       />
       <WordInput searchForWord={handleSearch} />
     </>

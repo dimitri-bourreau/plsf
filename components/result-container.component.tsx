@@ -20,7 +20,8 @@ export const ResultsContainer = ({
         "opacity-100": !inputIsEmpty,
       },
       {
-        "bg-white-500/80 animate-pulse": isPending && !inputIsEmpty,
+        "bg-white-500/80 animate-pulse w-[480px] h-[360px]":
+          isPending && !inputIsEmpty,
       },
     )}
   >

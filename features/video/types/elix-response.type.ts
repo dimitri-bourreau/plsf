@@ -3,7 +3,7 @@ export interface ElixResponse {
   total: number;
 }
 
-interface ElixDataItem {
+export interface ElixDataItem {
   definition: DefinitionOrSignBase;
   signs: DefinitionOrSignBase[];
 }
@@ -12,7 +12,7 @@ export interface DefinitionOrSignBase {
   word_id: number;
   word: string;
   typology: string;
-  type: string;
+  type: "Signe" | "Définition";
   image: string | null;
   source: string | null;
   "@version": string;
