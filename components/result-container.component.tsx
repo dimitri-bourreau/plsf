@@ -4,11 +4,13 @@ import clsx from "clsx";
 interface ResultsContainerProps {
   children?: ReactNode;
   inputIsEmpty: boolean;
+  isPending: boolean;
 }
 
 export const ResultsContainer = ({
   children,
   inputIsEmpty,
+  isPending,
 }: ResultsContainerProps) => (
   <section
     className={clsx(
@@ -16,6 +18,9 @@ export const ResultsContainer = ({
       {
         "opacity-0": inputIsEmpty,
         "opacity-100": !inputIsEmpty,
+      },
+      {
+        "bg-white-500/80 animate-pulse": isPending && !inputIsEmpty,
       },
     )}
   >
