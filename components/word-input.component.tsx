@@ -35,7 +35,7 @@ export const WordInput = ({ searchForWord }: WordInputProps) => {
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 640 640"
           fill="currentColor"
-          className="absolute w-5 h-5 top-2.5 right-2.5 text-slate-600 opacity-10 hover:cursor-pointer"
+          className="absolute w-5 h-5 top-2.5 right-2.5 text-gray-500 hover:cursor-pointer"
           onClick={handleDeleteInputQuery}
         >
           {/*Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc*/}
