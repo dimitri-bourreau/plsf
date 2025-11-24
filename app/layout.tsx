@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className="font-verdana flex flex-col gap-6 items-center justify-between h-screen p-10">
+      <body className="bg-[#4CDAE0] font-verdana flex flex-col gap-6 items-center justify-between h-screen p-10">
         <NuqsAdapter>
           <BackgroundLines />
           <header className="flex flex-col gap-4 items-center">
